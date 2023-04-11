@@ -13,13 +13,13 @@
                             <NuxtLink class="nav-link active" aria-current="page" to="index">Home</NuxtLink>
                         </li>
                         <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/obat/">Resep</NuxtLink>
+                            <NuxtLink class="nav-link" to="resep">Resep</NuxtLink>
                         </li>
                         <li class="nav-item">
                             <NuxtLink class="nav-link" to="about">About</NuxtLink>
                         </li>
                         <li class="nav-item">
-                            <NuxtLink class="nav-link" to="/obat/">produk</NuxtLink>
+                            <NuxtLink class="nav-link" to="obat">produk</NuxtLink>
                         </li>
                     </ul>
                     <form class="d-flex">

@@ -10,7 +10,7 @@
                             <input type="Email" name="Email" placeholder="Email">
                             <input type="text" name="username" placeholder="Username">
                             <input type="password" name="password" placeholder="Password">
-                            <NuxtLink to="index.vue"><input type="Submit" name="register" value="register"></NuxtLink>
+                            <NuxtLink to="login"><input type="Submit" name="register" value="register"></NuxtLink>
                         </form>
                     </div>
                 </div>

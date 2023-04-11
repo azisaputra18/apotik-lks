@@ -3,8 +3,8 @@
         <div class="container">
     <nav>
       <div class="top">
-        <img class="img-t" src="img/azi.jpg" alt="">
-        <h2>azi saputra</h2>
+        <img class="img-t" src="@/assets/img/apotik.png" alt="">
+        <h5>Healthy pharmacy</h5>
         <span class = "line"></span>
       </div>
       <div class="bot">     
@@ -30,7 +30,7 @@
         </div>
       </div>
     </nav>
-    <div class="navbar"> 
+    <!-- <div class="navbar"> 
       <div class="left">
         <div class="hamburger">
           <span></span>
@@ -41,7 +41,7 @@
       <div class="right">
         <h1>Healthy pharmacy</h1>
       </div>
-    </div>
+    </div> -->
     </div>
     </div>
 </template>

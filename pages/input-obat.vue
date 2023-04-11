@@ -5,62 +5,61 @@
                 <h2>input data obat</h2>
                 <table>
                     <thead>
-                    <tr>
-                        <td>kode obat</td>
-                        <td><input type="text" v-model="form.kode_obat" size="40" placeholder="kode obat" required></td>
-                        <td>Nama produk</td>
-                        <td><input type="text" v-model="form.nama_obat" size="40" placeholder="isi nama obat" required></td>
-                    </tr>
-                    <tr>
-                        <!-- <td>kategori</td>
-                        <td><input type="text" name="kategori" size="40" placeholder="kategori" required></td> -->
-                        <td>harga</td>
-                        <td> <input type="number" v-model="form.harga" size="40" placeholder="isi harga" required></td>
-                    </tr>
-                    <tr>
-                        <td>stok</td>
-                        <td><input type="number" v-model="form.jumlah" size="40" placeholder="isi stok" required></td>
-                        <td>exp</td>
-                        <td><input type="date" v-model="form.expired_obat" size="40" placeholder="isi exp" required></td>
-                    </tr>
-                    <tr>
-                        <td>Photo</td>
-                        <td><input type="text" v-model="form.image" > </td>
-                        <td></td>
-                        <td><button class="btn btn-primary">Kirim</button></td>
-                        <td><input type="button" name="Batal" value="Batal"></td>
-                    </tr>
-                </thead>
+                        <tr>
+                            <td>kode obat</td>
+                            <td><input type="text" v-model="form.kode_obat" size="40" placeholder="kode obat" required></td>
+                            <td>harga</td>
+                            <td><input type="number" v-model="form.nama_obat" size="40" placeholder="isi nama obat"
+                                    required></td>
+                        </tr>
+                        <tr>
+                            <td>Nama produk</td>
+                            <td> <input type="text" v-model="form.harga" size="40" placeholder="isi harga" required></td>
+                            <td>exp</td>
+                            <td><input type="date" v-model="form.expired_obat" size="40" placeholder="isi exp" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>stok</td>
+                            <td><input type="number" v-model="form.jumlah" size="40" placeholder="isi stok" required></td>
+                            <td>Photo</td>
+                            <td><input type="text" v-model="form.image"></td>
+                        </tr>
+                        <div class="btn">
+                            <td><button class="btn btn-primary">Kirim</button></td>
+                            <td><button class="btn btn-primary">batal</button></td>
+                        </div>
+                    </thead>
                 </table>
             </fieldset>
         </form>
         <br>
         <div class="main" align=" center">
-        <table class="table">
-            <thead class="table-info">
-                <tr>
-                    <th>No</th>
-                    <th>kode obat</th>
-                    <th>nama obat</th>
-                    <th>EXP</th>
-                    <th>stok</th>
-                    <th>harga</th>
-                    <th>image</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in items" :key="item.id">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.kode_obat }}</td>
-                    <td>{{ item.nama_obat }}</td>
-                    <td>{{ item.expired_obat }}</td>
-                    <td>{{ item.jumlah }}</td>
-                    <td>{{ item.harga }}</td>
-                    <td><img :src="assets/obat/ item.image" ></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+            <table class="table">
+                <thead class="table-info">
+                    <tr>
+                        <th>No</th>
+                        <th>kode obat</th>
+                        <th>nama obat</th>
+                        <th>EXP</th>
+                        <th>stok</th>
+                        <th>harga</th>
+                        <th>image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in items" :key="item.id">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.kode_obat }}</td>
+                        <td>{{ item.nama_obat }}</td>
+                        <td>{{ item.expired_obat }}</td>
+                        <td>{{ item.jumlah }}</td>
+                        <td>{{ item.harga }}</td>
+                        <td><img :src="assets / obat / item.image"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -85,7 +84,7 @@ const getData = async () => {
 onMounted(() => getData())
 
 const tambahObat = async () => {
-    // console.log(form.value)
+    console.log(form.value)
     const res = await axios.post(`http://localhost:8000/api/produk`, {
         kode_obat: form.value.kode_obat,
         nama_obat: form.value.nama_obat,
@@ -94,7 +93,7 @@ const tambahObat = async () => {
         harga: form.value.harga,
         image: form.value.image,
     })
-    
+
     return res
 }
 </script>
@@ -110,7 +109,7 @@ input[type="text" i] {
     box-sizing: border-box;
 }
 
-input[type="email" i] {
+input[type="date" i] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -130,41 +129,8 @@ input[type="number" i] {
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    background-color: #4c51af;
-    color: white;
-    width: 119px;
-    padding: 13px 13px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-}
-
-input[type=button] {
-    width: 119px;
-    background-color: #4c51af;
-    color: white;
-    padding: 13px 13px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: -129px
-}
-
-input[type=submit]:hover {
-    background-color: #000dffc0;
-}
-
-input[type=button]:hover {
-    background-color: #000dffc0;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
+.btn {
+    margin-left: 10px;
 }
 
 form {
@@ -174,10 +140,9 @@ form {
 
 }
 
-.main{
+.main {
     width: 945px;
     height: 207px;
     margin-left: 200px;
     background: right;
-}
-</style>
+}</style>
